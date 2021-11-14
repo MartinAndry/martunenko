@@ -20,8 +20,19 @@ namespace martunenko
 
             public GermanDictionary (string pathDictionary, string pathTestWords)
             {
-                dictionary = File.ReadAllLines(pathDictionary);
-                testWords = File.ReadAllLines(pathTestWords);
+                dictionary = arrayToLowerCase(File.ReadAllLines(pathDictionary));
+                testWords = arrayToLowerCase(File.ReadAllLines(pathTestWords));
+            }
+
+            private string[] arrayToLowerCase(string[] a)
+            {
+                string[] result = new string[a.Length];
+
+                for (int i = 0; i < a.Length; i++)
+                {
+                    result[i] = a[i].ToLower();
+                }
+                return result;
             }
 
             public void SplitWord (string pathResult)
