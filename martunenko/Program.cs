@@ -25,20 +25,27 @@ namespace martunenko
             @"C:\Users\User\Desktop\martunenko\txt\de-test-words.tsv");
             string pathResult = @"C:\Users\User\Desktop\martunenko\txt\result martunenko.txt";
 
-            germanDictionary.SplitWord(pathResult);
+            germanDictionary.SplitTestWord(pathResult);
         }
+
+
         public class GermanDictionary
         {
             string[] dictionary;
             string[] testWords;
+            int a1 = 0;
+            int a2 = 0;
+            int a3 = 0;
+            int a4 = 0;
+            int a5 = 0;
 
             public GermanDictionary(string pathDictionary, string pathTestWords)
             {
-                dictionary = arrayToLowerCase(File.ReadAllLines(pathDictionary));
-                testWords = arrayToLowerCase(File.ReadAllLines(pathTestWords));
+                dictionary = ArrayToLowerCase(File.ReadAllLines(pathDictionary));
+                testWords = ArrayToLowerCase(File.ReadAllLines(pathTestWords));
             }
 
-            private string[] arrayToLowerCase(string[] a)
+            private string[] ArrayToLowerCase(string[] a)
             {
                 string[] result = new string[a.Length];
 
@@ -49,11 +56,12 @@ namespace martunenko
                 return result;
             }
 
-            public void SplitWord(string pathResult)
+            public void SplitTestWord(string pathResult)
             {
                 foreach (string testWord in testWords)
                 {
                     List<string> listResult = new List<string>();
+
                     if (!CanSplitWord(testWord, listResult))
                     {
                         listResult.Add(testWord);
@@ -66,15 +74,23 @@ namespace martunenko
                     {
                         sb.Append($" {word},");
                     }
-                    sb.Remove(sb.Length - 1, 1);
+                    sb.Remove(sb.Length - 1, 1);                                            // удаление последней запятой
 
                     PrintResutlFile(pathResult, sb.ToString());
+                    
                 }
+                Console.WriteLine(a1);
+                Console.WriteLine(a2);
+                Console.WriteLine(a3);
+                Console.WriteLine(a4);
+                Console.WriteLine(a5);
             }
 
-            private bool CanSplitWord(string testWord, List<string> listResult)
+            private bool CanSplitWord(string testWord, List<string> listResult)             // if true разбитие произошло, listResult.Add записал составние
             {
-                int symbolAfterI = 0;
+
+
+                int symbolAfterI = 0;                                                       // кол-во букв в "слове остатке"
                 for (byte i = (byte)(testWord.Length - 1); i > 0; i--)
                 {
                     symbolAfterI++;
@@ -83,24 +99,31 @@ namespace martunenko
                         if (CanSplitWord(testWord.Substring(i, symbolAfterI), listResult))
                         {
                             listResult.Add(testWord.Substring(0, i));
+                            a1++;
                             return true;
                         }
                         else if (dictionary.Contains(testWord))
                         {
                             listResult.Add(testWord);
+                            a2++;
                             return true;
                         }
                         else
-                            return false;
+                            a3++;
+                        return false;
                     }
                 }
                 if (dictionary.Contains(testWord))
                 {
                     listResult.Add(testWord);
+                    a4++;
                     return true;
                 }
                 else
-                    return false;
+                    a5++;
+                return false;
+
+
             }
 
             public void PrintResutlFile(string path, string result)
