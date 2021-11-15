@@ -1,0 +1,100 @@
+(in) arbeitsamt -> (out) arbeits, amt
+(in) krankenhaus -> (out) kranken, haus
+(in) kraftfahrer -> (out) kraft, fahrer
+(in) online -> (out) online
+(in) büro -> (out) büro
+(in) erzieher -> (out) erzieher
+(in) teilzeit -> (out) teil, zeit
+(in) erzieherin -> (out) erzieherin
+(in) verkäuferin -> (out) verkäuferin
+(in) sekretärin -> (out) sekretärin
+(in) minijob -> (out) minijob
+(in) arzthelferin -> (out) arzthelferin
+(in) marketing -> (out) marketing
+(in) meister -> (out) meister
+(in) küchenhilfe -> (out) küchen, hilfe
+(in) koch -> (out) koch
+(in) reinigungskraft -> (out) reinigungskraft
+(in) bundeswehr -> (out) bundes, wehr
+(in) sozialarbeit -> (out) sozi, al, arbeit
+(in) sport -> (out) sport
+(in) bosch -> (out) bosch
+(in) fahrer -> (out) fahrer
+(in) ausland -> (out) ausland
+(in) praktikum -> (out) praktikum
+(in) medizinische -> (out) medizinische
+(in) rathaus -> (out) rat, haus
+(in) bürokraft -> (out) büro, kraft
+(in) schweißer -> (out) schweißer
+(in) jurist -> (out) jurist
+(in) vollzeit -> (out) vollzeit
+(in) soziale -> (out) sozi, al, e
+(in) medien -> (out) medien
+(in) aushilfe -> (out) aushilfe
+(in) arzt -> (out) arzt
+(in) mode -> (out) mode
+(in) bürokauffrau -> (out) büro, kauf, frau
+(in) kaufmann -> (out) kauf, mann
+(in) englisch -> (out) englisch
+(in) chemiker -> (out) chemiker
+(in) kindergarten -> (out) kinder, g, arten
+(in) rewe -> (out) re, w, e
+(in) klinikum -> (out) klinikum
+(in) pädagogik -> (out) pädagogik
+(in) hausmeister -> (out) haus, meister
+(in) pharma -> (out) pharma
+(in) lidl -> (out) lidl
+(in) pta -> (out) pta
+(in) psychologie -> (out) psychologie
+(in) lebensmittel -> (out) lebens, mittel
+(in) lebenshilfe -> (out) lebens, hilfe
+(in) vertrieb -> (out) vertrieb
+(in) heimarbeit -> (out) heim, arbeit
+(in) zeitung -> (out) zeit, un, g
+(in) klinik -> (out) k, li, ni, k
+(in) verlag -> (out) verlag
+(in) berufskraftfahrer -> (out) berufs, kraft, fahrer
+(in) airbus -> (out) airbus
+(in) flughafen -> (out) flug, hafen
+(in) altenpflegerin -> (out) alten, pflegerin
+(in) nebenjob -> (out) nebenjob
+(in) edeka -> (out) edeka
+(in) uni -> (out) uni
+(in) heilerziehungspfleger -> (out) heilerziehungspfleger
+(in) bankkauffrau -> (out) bank, kauf, frau
+(in) einzelhandel -> (out) einzel, hand, el
+(in) altenheim -> (out) alten, he, im
+(in) buchhalter -> (out) buch, halter
+(in) energie -> (out) energie
+(in) empfang -> (out) empfang
+(in) gastronomie -> (out) gastronomie
+(in) altenpflege -> (out) alten, pflege
+(in) versicherung -> (out) versicherung
+(in) architekt -> (out) architekt
+(in) feuerwehr -> (out) feuer, wehr
+(in) zeitarbeit -> (out) zeit, arbeit
+(in) weihnachtsmarkt -> (out) weihnachtsmarkt
+(in) bautechniker -> (out) bau, techniker
+(in) französisch -> (out) französisch
+(in) it -> (out) it
+(in) biologie -> (out) biologie
+(in) mercedes -> (out) mercedes
+(in) staplerfahrer -> (out) stapler, fahrer
+(in) lagerlogistik -> (out) lagerlogistik
+(in) tageszeitung -> (out) tages, zeit, un, g
+(in) bauzeichner -> (out) bauzeichner
+(in) stadtwerke -> (out) stadt, werk, e
+(in) helfer -> (out) helfer
+(in) polizei -> (out) polizei
+(in) ingenieur -> (out) ingenieur
+(in) immobilien -> (out) immobilien
+(in) landratsamt -> (out) land, rats, amt
+(in) assistenzarzt -> (out) assistenz, arzt
+(in) kita -> (out) kita
+(in) textil -> (out) textil
+(in) hotel -> (out) hotel
+(in) bildung -> (out) bild, un, g
+(in) fotograf -> (out) foto, graf
+(in) sap -> (out) sap
+(in) bahn -> (out) bahn
+(in) volksbank -> (out) volks, bank

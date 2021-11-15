@@ -10,18 +10,21 @@ namespace martunenko
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("pathDictionary");
+            //Console.WriteLine("Укажите путь к словарю");
             //string pathDictionary = Console.ReadLine();
 
-            //Console.WriteLine("pathTestWords");
+            //Console.WriteLine("Укажите путь к словам для обработки");
             //string pathTestWords = Console.ReadLine();
+
+            //Console.WriteLine("Укажить путь для записи результата");
+            //string pathResult = Console.ReadLine();
 
             //GermanDictionary germanDictionary = new GermanDictionary(pathDictionary, pathTestWords);
 
             GermanDictionary germanDictionary = new GermanDictionary(@"C:\Users\User\Desktop\martunenko\txt\de-dictionary.tsv",
             @"C:\Users\User\Desktop\martunenko\txt\de-test-words.tsv");
+            string pathResult = @"C:\Users\User\Desktop\martunenko\txt\result martunenko.txt";
 
-            string pathResult = @"C:\Users\User\Desktop\martunenko\txt\result.txt";
             germanDictionary.SplitWord(pathResult);
         }
         public class GermanDictionary
@@ -55,7 +58,7 @@ namespace martunenko
                     {
                         listResult.Add(testWord);
                     }
-
+                    listResult.Reverse();
 
                     StringBuilder sb = new StringBuilder($"(in) {testWord} -> (out)");
 
@@ -82,7 +85,11 @@ namespace martunenko
                             listResult.Add(testWord.Substring(0, i));
                             return true;
                         }
-
+                        else if (dictionary.Contains(testWord))
+                        {
+                            listResult.Add(testWord);
+                            return true;
+                        }
                         else
                             return false;
                     }
