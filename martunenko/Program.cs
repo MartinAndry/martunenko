@@ -10,20 +10,20 @@ namespace martunenko
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Укажите путь к словарю");
-            //string pathDictionary = Console.ReadLine();
+            Console.WriteLine("Укажите путь к словарю");
+            string pathDictionary = Console.ReadLine();
 
-            //Console.WriteLine("Укажите путь к словам для обработки");
-            //string pathTestWords = Console.ReadLine();
+            Console.WriteLine("Укажите путь к словам для обработки");
+            string pathTestWords = Console.ReadLine();
 
-            //Console.WriteLine("Укажить путь для записи результата");
-            //string pathResult = Console.ReadLine();
+            Console.WriteLine("Укажить путь для записи результата");
+            string pathResult = Console.ReadLine();
 
-            //GermanDictionary germanDictionary = new GermanDictionary(pathDictionary, pathTestWords);
+            GermanDictionary germanDictionary = new GermanDictionary(pathDictionary, pathTestWords);
 
-            GermanDictionary germanDictionary = new GermanDictionary(@"C:\Users\User\Desktop\martunenko\txt\de-dictionary.tsv",
-            @"C:\Users\User\Desktop\martunenko\txt\de-test-words.tsv");
-            string pathResult = @"C:\Users\User\Desktop\martunenko\txt\result martunenko.txt";
+            //GermanDictionary germanDictionary = new GermanDictionary(@"C:\Users\User\Desktop\martunenko\txt\de-dictionary.tsv",
+            //@"C:\Users\User\Desktop\martunenko\txt\de-test-words.tsv");
+            //string pathResult = @"C:\Users\User\Desktop\martunenko\txt\result martunenko.txt";
 
             germanDictionary.SplitTestWord(pathResult);
         }
@@ -33,11 +33,6 @@ namespace martunenko
         {
             string[] dictionary;
             string[] testWords;
-            int a1 = 0;
-            int a2 = 0;
-            int a3 = 0;
-            int a4 = 0;
-            int a5 = 0;
 
             public GermanDictionary(string pathDictionary, string pathTestWords)
             {
@@ -45,7 +40,7 @@ namespace martunenko
                 testWords = ArrayToLowerCase(File.ReadAllLines(pathTestWords));
             }
 
-            private string[] ArrayToLowerCase(string[] a)
+            private string[] ArrayToLowerCase(string[] a)                                   // решение регистрозависимости
             {
                 string[] result = new string[a.Length];
 
@@ -62,9 +57,9 @@ namespace martunenko
                 {
                     List<string> listResult = new List<string>();
 
-                    if (!CanSplitWord(testWord, listResult))
+                    if (!CanSplitWord(testWord, listResult))                                // if false разбитие не произошло, listResult.Add записал целое слово
                     {
-                        listResult.Add(testWord);
+                        listResult.Add(testWord);                                           
                     }
                     listResult.Reverse();
 
@@ -79,14 +74,9 @@ namespace martunenko
                     PrintResutlFile(pathResult, sb.ToString());
                     
                 }
-                Console.WriteLine(a1);
-                Console.WriteLine(a2);
-                Console.WriteLine(a3);
-                Console.WriteLine(a4);
-                Console.WriteLine(a5);
             }
 
-            private bool CanSplitWord(string testWord, List<string> listResult)             // if true разбитие произошло, listResult.Add записал составние
+            private bool CanSplitWord(string testWord, List<string> listResult)             // if true - разбитие произошло, listResult.Add записал составние
             {
 
 
@@ -94,33 +84,28 @@ namespace martunenko
                 for (byte i = (byte)(testWord.Length - 1); i > 0; i--)
                 {
                     symbolAfterI++;
-                    if (dictionary.Contains(testWord.Substring(0, i)))
+                    if (dictionary.Contains(testWord.Substring(0, i)))                      // есть ли часть проверяемого слова в словаре
                     {
-                        if (CanSplitWord(testWord.Substring(i, symbolAfterI), listResult))
+                        if (CanSplitWord(testWord.Substring(i, symbolAfterI), listResult))  // есть ли слово остаток в словаре
                         {
                             listResult.Add(testWord.Substring(0, i));
-                            a1++;
                             return true;
                         }
-                        else if (dictionary.Contains(testWord))
+                        else if (dictionary.Contains(testWord))                             // есть ли (i)символов проверяемого слово в словаре
                         {
                             listResult.Add(testWord);
-                            a2++;
                             return true;
                         }
                         else
-                            a3++;
                         return false;
                     }
                 }
                 if (dictionary.Contains(testWord))
                 {
                     listResult.Add(testWord);
-                    a4++;
                     return true;
                 }
                 else
-                    a5++;
                 return false;
 
 
